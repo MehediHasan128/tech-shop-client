@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink
           to="/addProduct"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
+            isPending ? "pending" : isActive ? "text-[#ff3c78] text-lg font-bold" : ""
           }
         >
           Add Product
@@ -29,7 +29,7 @@ const Navbar = () => {
         <NavLink
           to="/myCart"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
+            isPending ? "pending" : isActive ? "text-[#ff3c78] text-lg font-bold" : ""
           }
         >
           My Cart

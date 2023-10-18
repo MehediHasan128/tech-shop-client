@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "brand_Name": "Apple",
+        "brand_Image": "https://i.ibb.co/tXNqz01/apple.png"
+    },
+    {
+        "id": "2",
+        "brand_Name": "Samsung",
+        "brand_Image": "https://i.ibb.co/5vtqrjs/Samsung-Logo-svg-removebg-preview.png"
+    },
+    {
+        "id": "3",
+        "brand_Name": "Sony",
+        "brand_Image": "https://i.ibb.co/C82pZD4/sony.png"
+    },
+    {
+        "id": "4",
+        "brand_Name": "Google",
+        "brand_Image": "https://i.ibb.co/pdYGhPc/google.png"
+    },
+    {
+        "id": "5",
+        "brand_Name": "Dji",
+        "brand_Image": "https://i.ibb.co/RQy8vvW/dji.png"
+    },
+    {
+        "id": "7",
+        "brand_Name": "One Plus",
+        "brand_Image": "https://i.ibb.co/ySh26Pr/onePlus.png"
+    }
+]
