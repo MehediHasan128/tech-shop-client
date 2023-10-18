@@ -1,12 +1,58 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import brandLogo from '../../../../assets/logo2.jpg';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignIn = () => {
 
     const [showPass, setShowPass] = useState(false);
+    const {signIn, createAndLogInWithGoogle} = useContext(AuthContext);
+    const loaction = useLocation();
+    const navigate = useNavigate()
+
+    const handelSignInUserWithGoogle = () =>{
+        createAndLogInWithGoogle()
+        .then(result =>{
+            if(result){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'User Successfully login',
+                    showConfirmButton: false,
+                    timer: 1000
+                  })
+                  navigate(loaction?.state ? loaction.state : '/')
+            }
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+    }
+
+    const handelSignInUser = e =>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+        .then(result =>{
+            if(result){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'User Successfully login',
+                    showConfirmButton: false,
+                    timer: 1000
+                  })
+                  navigate(loaction?.state ? loaction.state : '/')
+            }
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+    }
     
     return (
         <div className="flex justify-center items-center h-screen">
@@ -19,7 +65,7 @@ const SignIn = () => {
                         </div>
                         <h1 className='text-center text-2xl lg:text-4xl font-bold mt-12'>Sign In Your Account</h1>
 
-                        <form className='mt-10 lg:mt-20'>
+                        <form onSubmit={handelSignInUser} className='mt-10 lg:mt-20'>
                             <input className='block border-b-[2px] border-gray-400 w-[70%] mx-auto px-4 py-2 outline-none text-lg lg:bg-slate-100' type="email" name="email" placeholder='Email' />
                             <div className='relative my-10'>
                                 <input
@@ -49,7 +95,7 @@ const SignIn = () => {
                             <h1 className='text-center text-lg text-gray-600 mb-10'>Sign In your Account using social networks</h1>
 
                             <div>
-                                <button className='flex items-center justify-center gap-4 border-2 border-black lg:w-[50%] mx-auto px-5 lg:px-0 py-4 rounded-md'>
+                                <button onClick={handelSignInUserWithGoogle} className='flex items-center justify-center gap-4 border-2 border-black lg:w-[50%] mx-auto px-5 lg:px-0 py-4 rounded-md'>
                                     <FcGoogle className='text-3xl' />
                                     <h2 className='text-xl font-semibold'>SignIn with Google</h2>
                                 </button>

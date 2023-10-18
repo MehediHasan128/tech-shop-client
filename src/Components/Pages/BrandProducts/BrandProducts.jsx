@@ -8,7 +8,7 @@ const BrandProducts = () => {
 
     return (
         <div>
-            <h1>This is brand product section</h1>
+            <h1>{products.length}</h1>
         </div>
     );
 };

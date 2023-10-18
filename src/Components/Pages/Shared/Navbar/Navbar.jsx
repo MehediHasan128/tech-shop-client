@@ -1,8 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
 import logo from '../../../../assets/logo2.jpg';
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+  const {user, userLogout} = useContext(AuthContext)
+
   const navLinks = (
     <>
       <li>
@@ -37,6 +42,15 @@ const Navbar = () => {
       </li>
     </>
   );
+
+
+  const handelLogOut = () =>{
+    userLogout()
+    .then()
+    .catch(error =>{
+      console.log(error);
+    })
+  }
 
   return (
     <div className="navbar container mx-auto my-2 lg:my-5">
@@ -77,7 +91,12 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div>
-            <Link to='/signIn' className="text-xl font-medium">Sign In</Link>
+            {
+              user ?
+              <button onClick={handelLogOut} className="text-xl font-medium">Sign Out</button>
+              :
+              <Link to='/signIn' className="text-xl font-medium">Sign In</Link>
+            }
         </div>
       </div>
     </div>
