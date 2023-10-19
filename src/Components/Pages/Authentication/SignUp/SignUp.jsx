@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
   const [showPass, setShowPass] = useState(false);
   const [passwordError, setPasswordError] = useState('');
-  const {createUser, createAndLogInWithGoogle} = useContext(AuthContext);
+  const {createUser, createAndLogInWithGoogle, setDisplayName} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ const SignUp = () => {
   const handelCreateUser = e =>{
     e.preventDefault();
     const form = e.target;
-    // const name = form.name.value;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     setPasswordError('')
@@ -55,6 +55,9 @@ const SignUp = () => {
       else{
         createUser(email, password)
         .then(result =>{
+          const user = result.user;
+          console.log(user);
+          setDisplayName(user, name)
             if(result){
                 Swal.fire({
                     icon: 'success',

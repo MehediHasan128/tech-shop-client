@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../FIrebase/firebase.config";
 
 
@@ -32,6 +32,12 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
+    const setDisplayName = (user, name) =>{
+        updateProfile(user, {
+            displayName: name
+        })
+    }
+
 
     useEffect(() =>{
         const unSubscribe = onAuthStateChanged(auth, currentUser =>{
@@ -52,7 +58,8 @@ const AuthProvider = ({children}) => {
         createUser,
         createAndLogInWithGoogle,
         signIn,
-        userLogout
+        userLogout,
+        setDisplayName
     }
 
     return (

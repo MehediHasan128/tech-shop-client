@@ -1,12 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-import './Navbar.css'
-import logo from '../../../../assets/logo2.jpg';
+import "./Navbar.css";
+import logo from "../../../../assets/logo2.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
-
-  const {user, userLogout} = useContext(AuthContext)
+  const { user, userLogout } = useContext(AuthContext);
 
   const navLinks = (
     <>
@@ -14,7 +13,11 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#ff3c78] text-lg font-bold" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-[#ff3c78] text-lg font-bold"
+              : ""
           }
         >
           Home
@@ -24,7 +27,11 @@ const Navbar = () => {
         <NavLink
           to="/addProduct"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#ff3c78] text-lg font-bold" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-[#ff3c78] text-lg font-bold"
+              : ""
           }
         >
           Add Product
@@ -34,7 +41,11 @@ const Navbar = () => {
         <NavLink
           to="/myCart"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#ff3c78] text-lg font-bold" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-[#ff3c78] text-lg font-bold"
+              : ""
           }
         >
           My Cart
@@ -43,14 +54,13 @@ const Navbar = () => {
     </>
   );
 
-
-  const handelLogOut = () =>{
+  const handelLogOut = () => {
     userLogout()
-    .then()
-    .catch(error =>{
-      console.log(error);
-    })
-  }
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="navbar container mx-auto my-2 lg:my-5">
@@ -80,8 +90,10 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="flex items-center">
-            <img className="w-10 md:w-12 lg:w-16 mr-3" src={logo} alt="" />
-            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold"><span className="text-sky-400">Tech</span> Shop</h2>
+          <img className="w-10 md:w-12 lg:w-16 mr-3" src={logo} alt="" />
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-bold">
+            <span className="text-sky-400">Tech</span> Shop
+          </h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -91,12 +103,27 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div>
-            {
-              user ?
-              <button onClick={handelLogOut} className="text-xl font-medium">Sign Out</button>
-              :
-              <Link to='/signIn' className="text-xl font-medium">Sign In</Link>
-            }
+          {user ? (
+            <div className="flex items-center gap-4">
+              <div className="hidden lg:block">
+              {
+                user.displayName ? <h1>{user.displayName}</h1> : ''
+              }
+              </div>
+              <div className="avatar online">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL? user.photoURL : 'https://static.vecteezy.com/system/resources/previews/001/840/618/original/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg'} />
+                </div>
+              </div>
+              <button onClick={handelLogOut} className="text-xl font-medium">
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <Link to="/signIn" className="text-xl font-medium">
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
     </div>

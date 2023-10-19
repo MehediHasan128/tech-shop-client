@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { MdEdit, MdDelete } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const DisplayCartProducts = ({product, handelDelete}) => {
     
@@ -21,7 +22,7 @@ const DisplayCartProducts = ({product, handelDelete}) => {
       {brandName}
         </h6>
         <div className='text-2xl flex gap-5 text-pink-500'>
-            <MdEdit className='cursor-pointer' />
+            <Link to={`/updateProduct/${_id}`}><MdEdit className='cursor-pointer' /></Link>
             <MdDelete onClick={() => handelDelete(_id)} className='cursor-pointer' />
         </div>
     </div>
