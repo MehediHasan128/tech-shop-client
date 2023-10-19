@@ -7,6 +7,7 @@ import BrandProducts from "../Pages/BrandProducts/BrandProducts";
 import SignUp from "../Pages/Authentication/SignUp/SignUp";
 import PrivetRoute from "./PrivetRoute";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import Cart from "../Pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             {
                 path: '/addProduct',
                 element: <PrivetRoute><AddProduct /></PrivetRoute>
+            },
+            {
+                path: '/myCart',
+                element: <Cart />,
+                loader: () => fetch('http://localhost:5000/cart')
             },
             {
                 path: '/products/:brandName',

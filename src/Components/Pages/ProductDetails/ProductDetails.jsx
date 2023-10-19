@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { BsFillStarFill } from 'react-icons/bs';
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
 
@@ -20,7 +21,14 @@ const ProductDetails = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data){
+              Swal.fire({
+                icon: 'success',
+                title: 'Product Add to Cart',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
         })
     }
 
