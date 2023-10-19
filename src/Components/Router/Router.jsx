@@ -9,11 +9,13 @@ import PrivetRoute from "./PrivetRoute";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Cart from "../Pages/Cart/Cart";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Layout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
