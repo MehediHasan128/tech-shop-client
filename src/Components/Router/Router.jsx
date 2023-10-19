@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/products')
             },
             {
                 path: '/signIn',
@@ -35,22 +35,22 @@ const router = createBrowserRouter([
             {
                 path: '/myCart',
                 element: <PrivetRoute><Cart /></PrivetRoute>,
-                loader: () => fetch('http://localhost:5000/cart')
+                loader: () => fetch('https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/cart')
             },
             {
                 path: '/products/:brandName',
                 element: <BrandProducts />,
-                loader: ({params}) => fetch(`http://localhost:5000/products/${params.brandName}`)
+                loader: ({params}) => fetch(`https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/products/${params.brandName}`)
             },
             {
                 path: '/product/:id',
                 element: <PrivetRoute><ProductDetails /></PrivetRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/product/${params.id}`)
             },
             {
                 path: '/updateProduct/:id',
                 element: <UpdateProduct />,
-                loader: ({params}) => fetch(`http://localhost:5000/cart/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/cart/${params.id}`)
             }
         ]
     }

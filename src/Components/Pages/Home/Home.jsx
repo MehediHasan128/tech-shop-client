@@ -45,16 +45,16 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5 px-5 lg:px-0">
                 {
                     (products.length > 8 && showAll)?
-                    products.slice(0, 8).map(product => <DisplayAllProducts key={product._id} product={product} />) :
-                    products.map(product => <DisplayAllProducts key={product._id} product={product} />)
+                    products.map(product => <DisplayAllProducts key={product._id} product={product} />) :
+                    products.slice(0, 8).map(product => <DisplayAllProducts key={product._id} product={product} />)
                 }
         </div>
 
                 <div className="flex justify-center">
                 {
-                    (products.length > 8)?
-                    <button onClick={() => setShowAll(!showAll)} className="my-10 bg-slate-400 px-5 py-3 rounded-md text-lg font-medium">Show All</button> :
-                    <></>
+                    (products.length > 8 && showAll)?
+                    <button onClick={() => setShowAll(!showAll)} className="my-10 bg-slate-400 px-5 py-3 rounded-md text-lg font-medium">Show Less</button> :
+                    <button onClick={() => setShowAll(!showAll)} className="my-10 bg-slate-400 px-5 py-3 rounded-md text-lg font-medium">Show All</button>
                 }
                 </div>
 

@@ -16,7 +16,7 @@ const AddProduct = () => {
         
         const product = {name, brandName, categorie, price, ratings, image, description}
         
-        fetch('http://localhost:5000/products', {
+        fetch('https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/products', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -62,6 +62,7 @@ const AddProduct = () => {
                             <option value='' disabled selected>---Product Category---</option>
                             <option value="Phone">Phone</option>
                             <option value="Computer">Computer</option>
+                            <option value="Laptop">Laptop</option>
                             <option value="Head Phone">Head Phone</option>
                             <option value="Drone">Drone</option>
                             <option value="Smart Watch">Smart Watch</option>
