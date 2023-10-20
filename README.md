@@ -1,8 +1,15 @@
-# React + Vite
+# 5 main feature of my website
+=> This website have email and google based athentication
+=> The add product and my cart route is protected route so if a user loged out the he can't access this two route.
+=> In home page display only 8 products but when a user click on the show all button then display all the products.
+=> This website has extra two section
+=> If a user loged in this website then show his/her name or profile picture on navbar section
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Client site repo:
+https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-MehediHasan128
 
-Currently, two official plugins are available:
+# Server site repo:
+https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-MehediHasan128
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Live link:
+https://tech-shop-95ff7.web.app

@@ -2,12 +2,12 @@ li{
     position: relative;
 }
 li:hover{
-    color: #ff3c78;
+    color: #0aa5e3;
 }
 li:after{
     content: "";
     position: absolute;
-    background-color: #ff3c78;
+    background-color: #0aa5e3;
     height: 3px;
     width: 0;
     left: 0;

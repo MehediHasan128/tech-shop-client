@@ -38,7 +38,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="flex justify-center items-center mt-16">
+        <div className="flex justify-center items-center my-16">
             <div className="w-[80%] lg:px-20">
 
                 <h1 className="text-center text-3xl font-semibold">Add a Tech Product</h1>
