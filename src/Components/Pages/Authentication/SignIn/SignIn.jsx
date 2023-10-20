@@ -27,7 +27,15 @@ const SignIn = () => {
             }
         })
         .catch(error =>{
-            console.log(error);
+            if(error){
+                if(error){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `${error.message}`
+                      })
+                }
+            }
         })
     }
 
@@ -50,7 +58,15 @@ const SignIn = () => {
             }
         })
         .catch(error =>{
-            console.log(error);
+            if(error){
+                if(error){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `${error.message}`
+                      })
+                }
+            }
         })
     }
     

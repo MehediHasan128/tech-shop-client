@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 import DisplayAllProducts from "./DisplayAllProducts/DisplayAllProducts";
 import EmailVerificationBanner from "../EmailVerificationBanner/EmailVerificationBanner";
 import OurSupport from "./OurSupport/OurSupport";
+import OurServices from "./OurServices/OurServices";
 
 const Home = () => {
     const products = useLoaderData();
@@ -23,7 +24,7 @@ const Home = () => {
       <Banner />
 
       <div>
-        <div className="my-10 lg:my-20 text-center font-semibold">
+        <div className="my-10 lg:my-20 text-center font-semibold px-4 md:px-16 lg:px-0">
           <h1 className="text-xl lg:text-3xl">All Brands</h1>
           <p className="border-2 my-3 w-16 mx-auto border-sky-400"></p>
           <p className="text-gray-500">Discover the best in tech from a diverse array of top brands at our online tech shop. We offer a curated selection of products from renowned <br /> names in the industry, ensuring you have access to the latest innovations and quality you can trust.</p>
@@ -63,12 +64,29 @@ const Home = () => {
 
       </div>
 
-      <div className="mb-20">
+      <div>
         <EmailVerificationBanner />
       </div>
 
+      <div className="my-20">
+      <div className="my-10 lg:my-20 text-center font-semibold">
+          <h1 className="text-xl lg:text-3xl mb-3">Our Services</h1>
+          <p className="border-2 my-3 w-16 mx-auto border-sky-400"></p>
+          <p className="text-gray-500">Explore Our Latest Tech Products Today!</p>
+        </div>
+        <OurServices />
+      </div>
+
       <div>
-        <OurSupport />
+      <div className="my-10 lg:my-20 text-center font-semibold px-5 lg:px-0">
+          <h1 className="text-xl lg:text-3xl mb-3">Our Support</h1>
+          <p className="border-2 my-3 w-16 mx-auto border-sky-400"></p>
+          <p className="text-gray-500">Need help or have questions? Our support team is here for you. Contact us anytime, and <br /> we will assist you promptly with any tech-related inquiries or issues.</p>
+        </div>
+
+        <div className="mb-36">
+          <OurSupport />
+        </div>
       </div>
     </div>
   );
