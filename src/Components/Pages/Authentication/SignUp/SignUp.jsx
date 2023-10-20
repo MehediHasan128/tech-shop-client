@@ -91,8 +91,8 @@ const SignUp = () => {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col-reverse lg:flex-row justify-center w-full lg:bg-slate-100 rounded mt-[500px] lg:mt-0 gap-10 lg:gap-0">
+    <div className="flex justify-center items-center">
+      <div className="flex flex-col-reverse lg:flex-row justify-center w-full lg:bg-slate-100 rounded gap-10 lg:gap-0 mb-10">
         <div className="w-full lg:w-[50%] flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 py-20 lg:py-0">
           <div className="text-center text-white">
             <h1 className="text-6xl font-bold">

@@ -19,7 +19,7 @@ const Cart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://tech-shop-server-e0jl9p6wc-mehedihasan128.vercel.app/cart/${id}`, {
+        fetch(`https://tech-shop-server-p8f7onnde-mehedihasan128.vercel.app/cart/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -43,8 +43,8 @@ const Cart = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
+    <div className="flex justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 h-auto lg:h-screen">
       {products.map((product) => (
         <DisplayCartProducts
           key={product._id}

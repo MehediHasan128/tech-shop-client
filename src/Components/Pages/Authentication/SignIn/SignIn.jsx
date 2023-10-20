@@ -71,8 +71,8 @@ const SignIn = () => {
     }
     
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="flex flex-col-reverse lg:flex-row justify-center w-full lg:bg-slate-100 rounded">
+        <div className="flex justify-center items-center">
+            <div className="flex flex-col-reverse lg:flex-row justify-center w-full lg:bg-slate-100 rounded mb-10">
                 <div className="lg:w-[50%] mb-10 lg:mb-0 lg:py-20">
                     <div>
                         <div className='flex items-center gap-2 ml-10'>
@@ -119,7 +119,7 @@ const SignIn = () => {
                         </div>
                     </div>
                 </div>
-                <div className='lg:w-[50%] bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center mb-16 lg:mb-0 lg:rounded-r mt-96 lg:mt-0 py-20 lg:py-0'>
+                <div className='lg:w-[50%] bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center mb-16 lg:mb-0 lg:rounded-r py-20 lg:py-0'>
                     <div className='text-center text-white'>
                         <h1 className='text-6xl font-bold'>New Here?</h1>
                         <p className='my-8 text-xl'>Sign Up and discover the latest and greatest <br /> in tech products and services.</p>

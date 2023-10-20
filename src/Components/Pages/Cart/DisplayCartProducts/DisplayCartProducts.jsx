@@ -8,12 +8,12 @@ const DisplayCartProducts = ({product, handelDelete}) => {
 
     return (
         <div>
-            <div className="relative flex flex-col w-full lg:h-72 max-w-[48rem] lg:flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-  <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
+            <div className="relative flex flex-col w-[90%] lg:w-full mx-auto lg:h-72 max-w-[48rem] lg:flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div className="relative lg:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
     <img
       src={image}
       alt="image"
-      className="object-cover w-full h-full"
+      className="object-cover w-full h-[500px] lg:h-full rounded-r-lg lg:rounded-r-none"
     />
   </div>
   <div className="p-6">
