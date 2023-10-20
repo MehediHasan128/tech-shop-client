@@ -3,41 +3,60 @@ import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const product = useLoaderData();
-  const { _id, image, name, brandName, categorie, price, ratings, description } =
-    product;
+  const {
+    _id,
+    image,
+    name,
+    brandName,
+    categorie,
+    price,
+    ratings,
+    description,
+  } = product;
 
-    const handelUpdateProduct = e =>{
-        e.preventDefault()
-        const form = e.target;
-        const name = form.productName.value;
-        const brandName = form.brandName.value;
-        const categorie = form.productType.value;
-        const price = form.productPrice.value;
-        const ratings = form.productRatings.value;
-        const image = form.photoUrl.value;
-        const description = form.productDescription.value;
+  const handelUpdateProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.productName.value;
+    const brandName = form.brandName.value;
+    const categorie = form.productType.value;
+    const price = form.productPrice.value;
+    const ratings = form.productRatings.value;
+    const image = form.photoUrl.value;
+    const description = form.productDescription.value;
 
-        const updatedProduct = {name, brandName, categorie, price, ratings, image, description}
+    const updatedProduct = {
+      name,
+      brandName,
+      categorie,
+      price,
+      ratings,
+      image,
+      description,
+    };
 
-        fetch(`https://tech-shop-server-e0jl9p6wc-mehedihasan128.vercel.app//cart/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedProduct)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount > 0){
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Product update successfully',
-                    showConfirmButton: false,
-                    timer: 1000
-                  })
-            }
-        })
-    }
+    fetch(
+      `https://tech-shop-server-e0jl9p6wc-mehedihasan128.vercel.app/cart/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Product update successfully",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+        }
+      });
+  };
 
   return (
     <div className="flex justify-center items-center">
@@ -85,12 +104,16 @@ const UpdateProduct = () => {
                 >
                   <option defaultValue={categorie}>{categorie}</option>
                   <option value="Phone">Phone</option>
+                  <option value="Computer">Computer</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Head Phone">Head Phone</option>
                   <option value="Drone">Drone</option>
-                  <option value="Smart Watch">London</option>
-                  <option value="Camera">Washington</option>
+                  <option value="Smart Watch">Smart Watch</option>
+                  <option value="Camera">Camera</option>
+                  <option value="Gadgets">Gadgets</option>
                 </select>
                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-black peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-black peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-black peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                  Select a City
+                  Product Types
                 </label>
               </div>
 

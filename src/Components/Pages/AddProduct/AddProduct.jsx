@@ -16,7 +16,7 @@ const AddProduct = () => {
         
         const product = {name, brandName, categorie, price, ratings, image, description}
         
-        fetch('https://tech-shop-server-e0jl9p6wc-mehedihasan128.vercel.app//products', {
+        fetch('https://tech-shop-server-e0jl9p6wc-mehedihasan128.vercel.app/products', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -67,6 +67,7 @@ const AddProduct = () => {
                             <option value="Drone">Drone</option>
                             <option value="Smart Watch">Smart Watch</option>
                             <option value="Camera">Camera</option>
+                            <option value="Gadgets">Gadgets</option>
                         </select>
                     <div className="w-full flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between">
                         <input className="w-full lg:w-[48%] px-5 py-3 border-2 rounded-md text-lg" type="text" name="price" placeholder="Product Price" />
