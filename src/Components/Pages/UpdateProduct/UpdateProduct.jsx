@@ -59,7 +59,7 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center my-10">
       <div className="w-full">
         <h1 className="text-3xl text-center my-10">Upadte {name}</h1>
 

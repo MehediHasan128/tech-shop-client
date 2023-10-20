@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const DisplayCartProducts = ({product, handelDelete}) => {
     
-    const {_id, image, name, brandName} = product;
+    const {_id, image, name, brandName, price, categorie} = product;
 
     return (
         <div>
@@ -35,6 +35,14 @@ const DisplayCartProducts = ({product, handelDelete}) => {
       selling licenses. Yet its own business model disruption is only part of
       the story
     </p>
+    <div className='flex gap-5'>
+      <div className='text-lg font-medium border-2 w-fit px-3 rounded-lg border-pink-500 text-pink-500'>
+        <h1>${price}</h1>
+      </div>
+      <div className='text-lg font-medium border-2 w-fit px-3 rounded-lg border-pink-500 text-pink-500'>
+        <h1>{categorie}</h1>
+      </div>
+    </div>
   </div>
 </div>
         </div>
