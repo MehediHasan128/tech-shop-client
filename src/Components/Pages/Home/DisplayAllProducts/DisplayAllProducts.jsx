@@ -10,7 +10,7 @@ const DisplayAllProducts = ({product}) => {
   <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
     <img
       src={image}
-      className="object-cover w-full h-full"
+      className="object-cover w-full h-full hover:scale-150 duration-700"
     />
   </div>
   <div className="p-6">

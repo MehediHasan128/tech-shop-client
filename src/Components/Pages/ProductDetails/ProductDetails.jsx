@@ -20,7 +20,7 @@ const ProductDetails = () => {
   console.log(cartProduct);
 
   const handelAddToCart = () => {
-    fetch("https://tech-shop-server-b6fgdrc2k-mehedihasan128.vercel.app/cart", {
+    fetch("https://tech-shop-server-q92m3tttj-mehedihasan128.vercel.app//cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
