@@ -43,7 +43,8 @@ const Cart = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
+    <div className="flex justify-center items-center h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
       {products.map((product) => (
         <DisplayCartProducts
           key={product._id}
@@ -51,6 +52,7 @@ const Cart = () => {
           handelDelete={handelDelete}
         />
       ))}
+    </div>
     </div>
   );
 };
