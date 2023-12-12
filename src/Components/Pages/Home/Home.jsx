@@ -87,6 +87,7 @@ const Home = () => {
         <div className="mb-36">
           <OurSupport />
         </div>
+
       </div>
     </div>
   );

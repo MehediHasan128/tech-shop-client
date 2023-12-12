@@ -102,29 +102,36 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div>
-          {user ? (
-            <div className="flex items-center gap-4">
-              <div className="hidden lg:block">
-              {
-                user.displayName ? <h1>{user.displayName}</h1> : ''
-              }
+        {
+          user ?
+          <>
+            <div className="dropdown dropdown-end">
+          <div tabIndex={0} role="button">
+            <div className="avatar">
+              <div className="w-16 rounded-full">
+                <img src={user?.photoURL} />
               </div>
-              <div className="avatar online">
-                <div className="w-10 rounded-full">
-                  <img src={user.photoURL? user.photoURL : 'https://static.vecteezy.com/system/resources/previews/001/840/618/original/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg'} />
-                </div>
-              </div>
-              <button onClick={handelLogOut} className="text-xl font-medium">
-                Sign Out
-              </button>
             </div>
-          ) : (
-            <Link to="/signIn" className="text-xl font-medium">
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a className="text-xl font-semibold">{user?.displayName}</a>
+            </li>
+            <li>
+              <button onClick={handelLogOut}>Logout</button>
+            </li>
+          </ul>
+        </div>
+          </> :
+          <>
+            <Link to="/signIn" className="text-xl font-medium bg-blue-400 px-5 py-3 rounded-xl text-white">
               Sign In
             </Link>
-          )}
-        </div>
+          </>
+        }
       </div>
     </div>
   );
